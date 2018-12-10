@@ -6,10 +6,12 @@ import {
 const Navigation = (props) => (
   <Grid className="navigation-screen">
     <Row>
-      <Col xs={2} sm={2} md={2} lg={2}>
-        <Glyphicon glyph="home" />
+      <Col className="center-align" xs={2} sm={2} md={2} lg={2}>
+        <h3><Glyphicon glyph="home" /></h3>
       </Col>
-      <Col xs={4} sm={4} md={4} lg={4}>Snowservations</Col>
+      <Col className="center-align" xs={8} sm={8} md={8} lg={8}>
+        <h3>SNOWSERVATIONS</h3>
+      </Col>
       <Col xs={2} sm={2} md={2} lg={2}></Col>
     </Row>
   </Grid>

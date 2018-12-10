@@ -1,4 +1,5 @@
 import Navigation from './navigation';
+import SnowTable from './snow-table';
 
 // const components = {
 //   Navigation,
@@ -6,4 +7,5 @@ import Navigation from './navigation';
 
 export {
   Navigation,
+  SnowTable,
 };
