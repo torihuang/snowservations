@@ -8,6 +8,8 @@ import CreateLayers from '../recordings/new/layers';
 
 import ViewRecording from '../recordings/view';
 
+import SignUp from '../signup';
+
 import { Navigation } from '../../components';
 
 class App extends Component {
@@ -21,6 +23,7 @@ class App extends Component {
           <Route exact path="/recordings/new/layers" component={CreateLayers} />
           <Route exact path="/recordings/new/conclusions" component={CreateConclusions} />
           <Route exact path="/recordings/:recordingId" component={ViewRecording} />
+          <Route exact path="/signup" component={SignUp} />
         </Switch>
       </div>
     );

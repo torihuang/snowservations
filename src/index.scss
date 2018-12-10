@@ -1,5 +1,6 @@
 /* Set Colors */
 $primary-color: #8DB7EB;
+$lines: #DCDCDC;
 
 body {
   margin: 0;
@@ -35,4 +36,22 @@ h4 {
 }
 .left-align {
   text-align: left;
+}
+
+.form-text-field {
+  width: 100%;
+  border: 1px solid $lines;
+  padding-top: 3px;
+  padding-right: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+  margin-bottom: 3px;
+}
+
+.form-text-container {
+  margin-bottom: 5px;
+}
+
+.form-error {
+  color: red;
 }
