@@ -1,3 +1,10 @@
+# Snowservation
+
+In order to avoid avalanches, backcountry explorers can dig a snow pit and analyze the structure, layers, and general quality of the snowpack. This app allows adventurers to record snowpack data and general condition observations online.
+
+This is a web app to replicate the paper version of this document:
+<img width="460" height="460" src="https://user-images.githubusercontent.com/15917624/49711850-ed854800-fbfe-11e8-89a2-0aac9e23d140.JPG">
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
