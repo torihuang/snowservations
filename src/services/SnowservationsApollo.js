@@ -54,7 +54,6 @@ const newUser = (newUserData) => {
   }).then((response) => {
     client.resetStore();
     const user = response.data.newUser;
-    console.log('user.token', user.token);
     if (user && user.token) {
       storeToken(user.token);
     }
@@ -65,8 +64,26 @@ const newUser = (newUserData) => {
   });
 };
 
+const signInUser = (signInUserData) => {
+  return client.mutate({
+    mutation: GraphQLTags.mutations.signInUser,
+    variables: signInUserData,
+  }).then((response) => {
+    client.resetStore();
+    const user = response.data.signInUser;
+    if (user && user.token) {
+      storeToken(user.token);
+    }
+    return user;
+  }).catch((error) => {
+    console.log('Error signing in user', error);
+    return { error, result: null };
+  });
+};
+
 export default {
   client,
   clearClientStore,
   newUser,
+  signInUser,
 };

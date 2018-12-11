@@ -19,11 +19,19 @@ const newUser = gql`
 mutation newUser($firstName: String!, $lastName: String!, $email: String!, $password: String!) {
   newUser(firstName: $firstName, lastName: $lastName, email: $email, password: $password) {
     _id
-    email
-    name {
-      first
-      last
+    token
+    error {
+      key
+      value
     }
+  }
+}`;
+
+// MUTATIONS
+const signInUser = gql`
+mutation signInUser($email: String!, $password: String!) {
+  signInUser(email: $email, password: $password) {
+    _id
     token
     error {
       key
@@ -38,5 +46,6 @@ export default {
   },
   mutations: {
     newUser,
+    signInUser,
   },
 };
