@@ -55,13 +55,13 @@ const extendedColumnTest = {
 };
 
 const Home = (props) => (
-  <Grid>
-    <Row>
+  <Grid className="app-body">
+    <Row className="space-above-10">
       <Col xs={12} sm={12} md={12} lg={12}>
         <Button bsStyle="primary" onClick={() => props.history.push('/recordings/new/introduction')}>New Snowservation</Button>
       </Col>
     </Row>
-    <Row>
+    <Row className="space-above-10">
       <Col xs={12} sm={12} md={3} lg={3}>
         <h3 className="bold">Compression Test</h3>
       </Col>
