@@ -20,6 +20,10 @@ class SignUp extends Component {
   constructor() {
     super();
 
+    this.state = {
+      unknownError: '',
+    }
+
     this.handleClick = this.handleClick.bind(this);
     this.setFormApi = this.setFormApi.bind(this);
     this.getError = this.getError.bind(this);
@@ -29,8 +33,12 @@ class SignUp extends Component {
     const formState = this.formApi.getState();
     console.log(this.formApi.getState());
     if (!formState.invalid) {
-      SnowservationsApollo.newUser(formState).then((res) => {
-        console.log('res', res)
+      SnowservationsApollo.newUser(formState.values).then((res) => {
+        if (res.error) {
+          this.setState({ unknownError: res.error.value || 'Something went wrong' })
+        } else {
+          this.props.history.push('/')
+        }
       })
     }
   }
@@ -48,6 +56,11 @@ class SignUp extends Component {
   render() {
     return (
       <Grid>
+        <Row>
+          <Col xs={12} sm={12} md={12} lg={12}>
+            <h3>Sign Up</h3>
+          </Col>
+        </Row>
         <Row>
           <Col xs={12} sm={12} md={12} lg={12}>
             <Form id="signup-form" getApi={this.setFormApi}>

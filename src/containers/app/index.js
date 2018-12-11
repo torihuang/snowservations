@@ -12,13 +12,15 @@ import SignUp from '../signup';
 
 import { Navigation } from '../../components';
 
+import Auth from '../../services/Auth';
+
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Navigation />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Auth.isLoggedIn() ? Home : SignUp} />
           <Route exact path="/recordings/new/introduction" component={CreateIntro} />
           <Route exact path="/recordings/new/layers" component={CreateLayers} />
           <Route exact path="/recordings/new/conclusions" component={CreateConclusions} />

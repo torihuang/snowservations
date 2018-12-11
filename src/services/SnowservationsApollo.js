@@ -12,10 +12,9 @@ const httpLink = new HttpLink({ uri: Environment.getDomain() });
 
 const authMiddleware = new ApolloLink((operation, forward) => {
   const token = localStorage.getItem('token');
-  const tempTokenForGiftPurchase = localStorage.getItem('tempTokenForGiftPurchase');
   operation.setContext({
     headers: {
-      authorization: token || tempTokenForGiftPurchase ? `Bearer ${token || tempTokenForGiftPurchase}` : null,
+      authorization: token ? `Bearer ${token}` : null,
     },
   });
   return forward(operation);
@@ -41,7 +40,6 @@ const client = new ApolloClient({
 });
 
 const storeToken = function (token) {
-  localStorage.removeItem('tempTokenForGiftPurchase');
   localStorage.setItem('token', token);
 };
 
@@ -55,7 +53,8 @@ const newUser = (newUserData) => {
     variables: newUserData,
   }).then((response) => {
     client.resetStore();
-    const user = response.data.signUpUser;
+    const user = response.data.newUser;
+    console.log('user.token', user.token);
     if (user && user.token) {
       storeToken(user.token);
     }

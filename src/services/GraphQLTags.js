@@ -16,7 +16,7 @@ query allPressReleases {
 
 // MUTATIONS
 const newUser = gql`
-mutation newUser($firstName: String, $lastName: String, $email: String!, $password: String!) {
+mutation newUser($firstName: String!, $lastName: String!, $email: String!, $password: String!) {
   newUser(firstName: $firstName, lastName: $lastName, email: $email, password: $password) {
     _id
     email
