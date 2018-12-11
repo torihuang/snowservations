@@ -77,11 +77,11 @@ const SignInOrUp = branch(
 )(SignInForm);
 
 const SignInButton = props => (
-  <Button onClick={props.switchToSignIn}>Already have an account? Sign In.</Button>
+  <Button className="button-as-plain-link" onClick={props.switchToSignIn}>Already have an account? Sign In.</Button>
 );
 
 const SignUpButton = props => (
-  <Button onClick={props.switchToSignUp}>Don't have an account? Sign Up.</Button>
+  <Button className="button-as-plain-link" onClick={props.switchToSignUp}>Don't have an account? Sign Up.</Button>
 );
 
 const SwitchLoginButton = branch(
@@ -139,10 +139,10 @@ class SignUp extends Component {
 
   render() {
     return (
-      <Grid>
+      <Grid className="app-body">
         <Row>
           <Col xs={12} sm={12} md={12} lg={12}>
-            <h3>Sign Up</h3>
+            <h3>{this.state.isSignUp ? 'Sign Up' : 'Sign In'}</h3>
           </Col>
         </Row>
         <Row>
@@ -150,7 +150,7 @@ class SignUp extends Component {
             <SignInOrUp {...this.props} setFormApi={this.setFormApi} isSignUp={this.state.isSignUp} handleClick={this.handleClick} />
           </Col>
         </Row>
-        <Row>
+        <Row className="space-above-10">
           <Col xs={12} sm={12} md={12} lg={12}>
             <SwitchLoginButton isSignUp={this.state.isSignUp} switchToSignUp={() => this.setState({ isSignUp: true })} switchToSignIn={() => this.setState({ isSignUp: false })} />
           </Col>
