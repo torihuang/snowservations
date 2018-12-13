@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Table, thread, tr, th
+  Table, tr, th
 } from 'react-bootstrap';
 
 const TableHeaders = (props) => (

@@ -1,5 +1,6 @@
 import Navigation from './navigation';
 import SnowTable from './snow-table';
+import LayersTable from './layers-table';
 
 // const components = {
 //   Navigation,
@@ -8,4 +9,5 @@ import SnowTable from './snow-table';
 export {
   Navigation,
   SnowTable,
+  LayersTable,
 };
